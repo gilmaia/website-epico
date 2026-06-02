@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EPICO Brasil. Hospitalidade como criação de valor.</title>
+<meta name="description" content="EPICO Brasil. Parceira estratégica e criativa, guiada pela hospitalidade. Ativação de destinos, master plans, reposicionamento, turnaround e transição de ativos.">
+<meta property="og:title" content="EPICO Brasil">
+<meta property="og:description" content="Hospitalidade como ferramenta de criação de valor. Para terras, ativos e destinos.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #F2EDE3;
+    --bg-alt: #EAE3D4;
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --clay: #9C4A2E;
+    --forest: #2C3D2E;
+    --gold: #A88340;
+    --line: rgba(26,26,26,0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  /* NAV */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:22px 48px;
+    background:rgba(242,237,227,0.85);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .logo{
+    font-family:var(--serif);
+    font-size:24px;
+    font-weight:500;
+    letter-spacing:0.18em;
+  }
+  .logo span{color:var(--clay)}
+  .lang-toggle{
+    display:flex;gap:0;
+    font-family:var(--sans);
+    font-size:12px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+  }
+  .lang-toggle button{
+    background:none;border:none;cursor:pointer;
+    padding:6px 12px;
+    color:var(--ink-soft);
+    font-family:var(--sans);
+    font-size:12px;
+    letter-spacing:0.15em;
+    transition:color .2s;
+  }
+  .lang-toggle button.active{color:var(--ink);font-weight:500;border-bottom:1px solid var(--clay)}
+  .lang-toggle button:hover{color:var(--ink)}
+  .lang-toggle .sep{color:var(--line);padding:6px 2px}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:140px 48px 80px;
+    position:relative;
+    overflow:hidden;
+    background:var(--bg);
+  }
+  .hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background-image:url('imagens/hero.png');
+    background-size:cover;
+    background-position:center;
+    z-index:0;
+    opacity:0.9;
+  }
+  .hero::after{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(242,237,227,0.55) 0%, rgba(242,237,227,0.4) 40%, rgba(242,237,227,0.92) 100%),
+      radial-gradient(ellipse at 80% 20%, rgba(156,74,46,0.10), transparent 60%);
+    z-index:1;
+  }
+  .hero > *{position:relative;z-index:2}
+  .hero-eyebrow{
+    font-size:11px;letter-spacing:0.3em;text-transform:uppercase;
+    color:var(--clay);margin-bottom:32px;font-weight:500;
+  }
+  .hero-eyebrow::before{
+    content:'';display:inline-block;width:32px;height:1px;
+    background:var(--clay);vertical-align:middle;margin-right:14px;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(36px, 6vw, 84px);
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    max-width:1100px;
+    margin-bottom:40px;
+  }
+  .hero h1 em{font-style:italic;color:var(--clay);font-weight:400}
+  .hero-sub{
+    font-size:clamp(18px,1.4vw,22px);
+    color:var(--ink);
+    max-width:640px;
+    line-height:1.5;
+    font-weight:400;
+  }
+  .hero-scroll{
+    position:absolute;bottom:40px;left:48px;
+    font-size:11px;letter-spacing:0.25em;text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .hero-scroll::after{
+    content:'↓';display:inline-block;margin-left:10px;
+    animation:bob 2s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+  /* SECTION */
+  section{padding:120px 48px;position:relative}
+  .container{max-width:1240px;margin:0 auto}
+  .eyebrow{
+    font-size:11px;letter-spacing:0.3em;text-transform:uppercase;
+    color:var(--clay);margin-bottom:24px;font-weight:500;
+  }
+  .eyebrow::before{
+    content:'';display:inline-block;width:24px;height:1px;
+    background:var(--clay);vertical-align:middle;margin-right:12px;
+  }
+  h2{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(32px,4.5vw,56px);
+    line-height:1.1;
+    letter-spacing:-0.01em;
+    margin-bottom:48px;
+    max-width:900px;
+  }
+  h2 em{font-style:italic;color:var(--clay)}
+
+  /* BELIEF */
+  .belief{background:var(--bg-alt)}
+  .belief-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:start;
+  }
+  .belief-statements p{
+    font-family:var(--serif);
+    font-size:clamp(22px,2vw,28px);
+    line-height:1.4;
+    font-weight:300;
+    margin-bottom:28px;
+    color:var(--ink);
+  }
+  .belief-statements p:last-child{
+    color:var(--clay);
+    font-style:italic;
+  }
+
+  /* WHAT WE DO */
+  .services{padding-top:120px;padding-bottom:120px}
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:60px;
+  }
+  .service{
+    background:var(--bg);
+    padding:48px 40px;
+    transition:background .3s;
+  }
+  .service:hover{background:var(--bg-alt)}
+  .service-num{
+    font-family:var(--serif);
+    font-size:14px;
+    color:var(--clay);
+    margin-bottom:16px;
+    letter-spacing:0.1em;
+  }
+  .service h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:24px;
+    line-height:1.2;
+    margin-bottom:14px;
+  }
+  .service p{
+    font-size:15px;
+    color:var(--ink-soft);
+    line-height:1.55;
+  }
+
+  /* CREDENTIALS */
+  .credentials{
+    background:var(--forest);
+    color:var(--bg);
+    padding:140px 48px;
+  }
+  .credentials .eyebrow{color:var(--gold)}
+  .credentials .eyebrow::before{background:var(--gold)}
+  .credentials h2{color:var(--bg)}
+  .credentials h2 em{color:var(--gold)}
+  .cred-text{
+    max-width:880px;
+    font-size:clamp(18px,1.4vw,21px);
+    line-height:1.65;
+    color:rgba(242,237,227,0.85);
+    font-weight:300;
+  }
+  .cred-text p{margin-bottom:24px}
+  .cred-text p:last-child{
+    font-family:var(--serif);
+    font-style:italic;
+    color:var(--gold);
+    font-size:clamp(20px,1.6vw,24px);
+  }
+  .cred-marks{
+    display:flex;flex-wrap:wrap;gap:40px 56px;
+    margin-top:72px;
+    padding-top:48px;
+    border-top:1px solid rgba(168,131,64,0.3);
+  }
+  .cred-mark{
+    font-family:var(--serif);
+    font-size:18px;
+    letter-spacing:0.05em;
+    color:rgba(242,237,227,0.75);
+  }
+  .cred-mark strong{
+    display:block;
+    font-family:var(--sans);
+    font-size:10px;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+    margin-bottom:6px;
+  }
+
+  /* APPROACH */
+  .approach{background:var(--bg-alt);padding:140px 48px}
+  .approach-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:100px;
+    align-items:center;
+  }
+  .approach-text p{
+    font-size:17px;
+    line-height:1.7;
+    color:var(--ink);
+    margin-bottom:20px;
+  }
+  .approach-text p strong{
+    font-family:var(--serif);
+    font-weight:500;
+    font-style:italic;
+    color:var(--clay);
+    font-size:19px;
+  }
+  .approach-visual{
+    aspect-ratio:4/5;
+    position:relative;
+    overflow:hidden;
+    background:var(--bg-alt);
+  }
+  .approach-visual::before{
+    content:'';position:absolute;inset:0;
+    background-image:url('imagens/approach.jpg');
+    background-size:cover;
+    background-position:center;
+    z-index:0;
+  }
+  .approach-visual::after{
+    content:'';position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%),
+      linear-gradient(180deg, rgba(44,61,46,0.10) 0%, transparent 30%);
+    z-index:1;
+  }
+  .approach-visual .vlabel{
+    position:absolute;top:32px;left:32px;
+    z-index:2;
+    font-family:var(--sans);
+    font-size:10px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:rgba(242,237,227,0.9);
+    font-weight:500;
+  }
+  .approach-visual .vlabel::before{
+    content:'';display:inline-block;
+    width:24px;height:1px;
+    background:var(--gold);
+    vertical-align:middle;
+    margin-right:12px;
+  }
+  .approach-visual .vmain{
+    position:absolute;
+    bottom:40px;left:40px;
+    right:40px;
+    font-family:var(--serif);
+    font-size:clamp(28px, 3vw, 42px);
+    font-style:italic;
+    font-weight:400;
+    color:var(--bg);
+    line-height:1.15;
+    z-index:2;
+    text-shadow:0 2px 16px rgba(0,0,0,0.35);
+  }
+  .approach-visual .vmain::before{
+    content:'';display:block;
+    width:36px;height:1px;
+    background:var(--gold);
+    margin-bottom:18px;
+  }
+
+  /* GALLERY */
+  .gallery{
+    padding:140px 48px;
+    background:var(--bg);
+  }
+  .gallery-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:32px;
+    margin-bottom:64px;
+    max-width:1240px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .gallery-head h2{margin-bottom:0}
+  .gallery-head p{
+    max-width:380px;
+    color:var(--ink-soft);
+    font-size:15px;
+    line-height:1.6;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:14px;
+    max-width:1400px;
+    margin:0 auto;
+  }
+  .gallery-grid figure{
+    position:relative;
+    overflow:hidden;
+    aspect-ratio:3/4;
+    background:var(--bg-alt);
+    cursor:default;
+  }
+  .gallery-grid img{
+    width:100%;height:100%;
+    object-fit:cover;
+    transition:transform 1.2s cubic-bezier(0.2,0.8,0.2,1);
+  }
+  .gallery-grid figure:hover img{transform:scale(1.04)}
+  .gallery-grid figcaption{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    padding:16px 14px 14px;
+    background:linear-gradient(180deg, transparent, rgba(26,26,26,0.82));
+    color:var(--bg);
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:15px;
+    line-height:1.25;
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity .4s, transform .4s;
+  }
+  .gallery-grid figcaption small{
+    display:block;
+    font-family:var(--sans);
+    font-style:normal;
+    font-size:9px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:6px;
+    font-weight:500;
+  }
+  .gallery-grid figure:hover figcaption{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* CONTACT */
+  .contact{
+    padding:140px 48px;
+    background:var(--bg-alt);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:100px;
+    max-width:1240px;
+    margin:0 auto;
+  }
+  .contact-intro h2{margin-bottom:32px}
+  .contact-intro p{
+    font-size:18px;
+    color:var(--ink-soft);
+    line-height:1.6;
+    margin-bottom:40px;
+    max-width:480px;
+  }
+  .contact-direct{
+    padding-top:40px;
+    border-top:1px solid var(--line);
+    margin-top:40px;
+  }
+  .contact-direct-item{
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:18px;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .contact-direct-item .label{
+    font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--ink-soft);width:90px;
+  }
+  .contact-direct-item a{
+    color:var(--ink);
+    border-bottom:1px solid transparent;
+    transition:border-color .2s;
+  }
+  .contact-direct-item a:hover{border-color:var(--clay)}
+
+  /* FORM */
+  form{display:flex;flex-direction:column;gap:24px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  label{
+    display:block;
+    font-size:11px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+    font-weight:500;
+  }
+  input,textarea,select{
+    width:100%;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid var(--line);
+    padding:10px 0;
+    font-family:var(--sans);
+    font-size:16px;
+    color:var(--ink);
+    transition:border-color .2s;
+  }
+  input:focus,textarea:focus,select:focus{
+    outline:none;
+    border-bottom-color:var(--clay);
+  }
+  textarea{resize:vertical;min-height:90px}
+  select{
+    appearance:none;
+    -webkit-appearance:none;
+    background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231A1A1A' stroke-width='1.5'%3e%3cpath d='M6 9l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat:no-repeat;
+    background-position:right center;
+    background-size:18px;
+    padding-right:30px;
+    cursor:pointer;
+  }
+  button[type=submit]{
+    align-self:flex-start;
+    background:var(--ink);
+    color:var(--bg);
+    border:none;
+    padding:18px 36px;
+    font-family:var(--sans);
+    font-size:12px;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    font-weight:500;
+    cursor:pointer;
+    transition:background .25s;
+    margin-top:12px;
+  }
+  button[type=submit]:hover{background:var(--clay)}
+  .form-message{
+    padding:14px 0;
+    font-size:14px;
+    color:var(--forest);
+    display:none;
+  }
+  .form-message.show{display:block}
+
+  /* FOOTER */
+  footer{
+    padding:48px;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
+    color:var(--ink-soft);
+    background:var(--bg);
+  }
+  footer .logo{font-size:18px}
+
+  /* RESPONSIVE */
+  @media (max-width: 900px){
+    .nav{padding:18px 24px}
+    .logo{font-size:18px}
+    .hero{padding:120px 24px 60px}
+    .hero-scroll{left:24px}
+    section{padding:80px 24px}
+    .credentials,.approach,.contact,.gallery{padding:80px 24px}
+    h2{margin-bottom:32px}
+    .belief-grid,.approach-grid,.contact-grid{
+      grid-template-columns:1fr;
+      gap:48px;
+    }
+    .services-grid{grid-template-columns:1fr}
+    .service{padding:36px 28px}
+    .form-row{grid-template-columns:1fr}
+    .cred-marks{gap:28px 32px;margin-top:48px;padding-top:32px}
+    footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}
+    .approach-visual{aspect-ratio:1/1;margin-top:24px}
+    .approach-visual span{font-size:32px;bottom:32px;left:32px}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+    .gallery-grid figure{aspect-ratio:3/4}
+    .gallery-grid figcaption{opacity:1;transform:none;font-size:13px;padding:12px 10px 10px}
+    .gallery-grid figcaption small{font-size:8px;letter-spacing:0.18em}
+  }
+  @media (min-width:901px) and (max-width:1100px){
+    .gallery-grid{grid-template-columns:repeat(3,1fr)}
+  }
+
+  /* LANG VISIBILITY */
+  [data-lang]{display:none}
+  html[lang="pt-BR"] [data-lang="pt"]{display:initial}
+  html[lang="en"] [data-lang="en"]{display:initial}
+
+  /* FLOATING WHATSAPP */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;
+    width:56px;height:56px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.18);
+    z-index:50;
+    transition:transform .2s;
+  }
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#" class="logo">EPICO<span> .</span> BRASIL</a>
+  <div class="lang-toggle">
+    <button id="btn-pt" class="active" onclick="setLang('pt-BR')">PT</button>
+    <span class="sep">/</span>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-eyebrow">
+    <span data-lang="pt">Hospitalidade · Estratégia · Criação de valor</span>
+    <span data-lang="en">Hospitality · Strategy · Value creation</span>
+  </div>
+  <h1>
+    <span data-lang="pt">Arquitetura bonita sem operação<br>é só <em>cenário caro</em>.</span>
+    <span data-lang="en">Beautiful architecture without operations<br>is just <em>expensive scenery</em>.</span>
+  </h1>
+  <p class="hero-sub">
+    <span data-lang="pt">Usamos hospitalidade como ferramenta de criação de valor. Para terras, ativos e destinos que merecem mais do que uma estrutura.</span>
+    <span data-lang="en">We use hospitality as a tool for value creation. For land, assets, and destinations that deserve more than a structure.</span>
+  </p>
+  <div class="hero-scroll">
+    <span data-lang="pt">No que acreditamos</span>
+    <span data-lang="en">What we believe</span>
+  </div>
+</header>
+
+<!-- BELIEF -->
+<section class="belief">
+  <div class="container">
+    <div class="belief-grid">
+      <div>
+        <div class="eyebrow">
+          <span data-lang="pt">No que acreditamos</span>
+          <span data-lang="en">What we believe</span>
+        </div>
+        <h2>
+          <span data-lang="pt">A maior parte dos projetos é <em>superconstruída e suboperada</em>.</span>
+          <span data-lang="en">Most projects are <em>overbuilt and under-operated</em>.</span>
+        </h2>
+      </div>
+      <div class="belief-statements">
+        <p>
+          <span data-lang="pt">A maior parte do real estate com discurso de hospitalidade falha porque a narrativa é fraca e o sistema por trás é mais fraco ainda.</span>
+          <span data-lang="en">Most hospitality-led real estate fails because the story is weak and the system behind it is weaker.</span>
+        </p>
+        <p>
+          <span data-lang="pt">Um ativo forte precisa de mais do que design. Precisa de significado, lógica operacional, inteligência comercial e um sistema que funcione.</span>
+          <span data-lang="en">A strong asset needs more than design. It needs meaning, operating logic, commercial intelligence, and a system that works.</span>
+        </p>
+        <p>
+          <span data-lang="pt">Esse é o trabalho.</span>
+          <span data-lang="en">That is the work.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="services">
+  <div class="container">
+    <div class="eyebrow">
+      <span data-lang="pt">O que fazemos</span>
+      <span data-lang="en">What we do</span>
+    </div>
+    <h2>
+      <span data-lang="pt">Hospitalidade desde o começo. Não como camada adicionada no fim.</span>
+      <span data-lang="en">Hospitality from the start. Not as a layer added at the end.</span>
+    </h2>
+
+    <div class="services-grid">
+      <div class="service">
+        <div class="service-num">01</div>
+        <h3>
+          <span data-lang="pt">Criamos o conceito.</span>
+          <span data-lang="en">We create the concept.</span>
+        </h3>
+        <p>
+          <span data-lang="pt">A ideia, a história, o posicionamento e a razão do projeto existir. Hospitality concept and destination strategy com sentido de lugar, lógica comercial e potencial real de operação.</span>
+          <span data-lang="en">The idea, the story, the positioning, and the reason the project exists. Hospitality concept and destination strategy with sense of place, commercial logic, and real operating potential.</span>
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">02</div>
+        <h3>
+          <span data-lang="pt">Damos forma ao negócio.</span>
+          <span data-lang="en">We shape the business.</span>
+        </h3>
+        <p>
+          <span data-lang="pt">Modelo de receita, produto, mercado, pricing, operação e lógica de investimento. O conceito tem que funcionar antes de ser bonito.</span>
+          <span data-lang="en">Revenue model, product, market, pricing, operations, and investment logic. The concept has to work before it can be beautiful.</span>
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">03</div>
+        <h3>
+          <span data-lang="pt">Protegemos o ativo.</span>
+          <span data-lang="en">We protect the asset.</span>
+        </h3>
+        <p>
+          <span data-lang="pt">Asset management e owner advisory. Apoiamos proprietários, investidores e incorporadores nas decisões que afetam valor, performance, posicionamento e saída do ativo de longo prazo.</span>
+          <span data-lang="en">Asset management and owner advisory. We support owners, investors, and developers on decisions that affect value, performance, positioning, and exit over the long term.</span>
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">04</div>
+        <h3>
+          <span data-lang="pt">Estruturamos o capital.</span>
+          <span data-lang="en">We help raise the capital.</span>
+        </h3>
+        <p>
+          <span data-lang="pt">Investment decks, narrativa para investidores, modelos financeiros preliminares e capital positioning para apresentar o projeto com clareza a sócios, fundos, family offices e operadores.</span>
+          <span data-lang="en">Investment decks, investor narrative, preliminary financial models, and capital positioning to present the project clearly to partners, funds, family offices, and operators.</span>
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">05</div>
+        <h3>
+          <span data-lang="pt">Ficamos perto do upside.</span>
+          <span data-lang="en">We stay close to the upside.</span>
+        </h3>
+        <p>
+          <span data-lang="pt">Em projetos selecionados, entramos com skin in the game. Advisory de longo prazo, parceria estratégica, equity e modelos alinhados ao sucesso e à monetização do ativo.</span>
+          <span data-lang="en">On selected projects, we put skin in the game. Long-term advisory, strategic partnership, equity, and models aligned with the success and monetization of the asset.</span>
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">06</div>
+        <h3>
+          <span data-lang="pt">Construímos destinos.</span>
+          <span data-lang="en">We build hospitality-led destinations.</span>
+        </h3>
+        <p>
+          <span data-lang="pt">Micro-resorts regenerativos, villas, clubes, branded residences e real estate hospitality-led. Natureza, operação e modelo de receita trabalham juntos desde o primeiro traço.</span>
+          <span data-lang="en">Regenerative micro-resorts, villas, clubs, branded residences, and hospitality-led real estate. Nature, operations, and revenue model work together from the first line.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials">
+  <div class="container">
+    <div class="eyebrow">
+      <span data-lang="pt">De onde vem nossa leitura</span>
+      <span data-lang="en">Where our thinking comes from</span>
+    </div>
+    <h2>
+      <span data-lang="pt">Pensamento moldado pelos ambientes <em>mais exigentes</em> da hotelaria de luxo.</span>
+      <span data-lang="en">Thinking shaped by the <em>most demanding</em> environments in luxury hospitality.</span>
+    </h2>
+
+    <div class="cred-text">
+      <p>
+        <span data-lang="pt">Pré-aberturas. Master plans. Rebrandings completos. Turnarounds. Transição de ativos para fundos de investimento. Vendas imobiliárias de alto padrão. Conceito, programação, F&amp;B, MICE, weddings, ativação comercial.</span>
+        <span data-lang="en">Pre-openings. Master plans. Full rebrandings. Turnarounds. Asset transitions for investment funds. High-end real estate sales. Concept, programming, F&amp;B, MICE, weddings, commercial activation.</span>
+      </p>
+      <p>
+        <span data-lang="pt">Nossa leitura vem de operar dentro de ecossistemas que não toleram improviso. Forbes 5-Star, Michelin Keys, Michelin Stars, World's 50 Best.</span>
+        <span data-lang="en">Our reading comes from operating inside ecosystems that do not tolerate improvisation. Forbes 5-Star, Michelin Keys, Michelin Stars, World's 50 Best.</span>
+      </p>
+      <p>
+        <span data-lang="pt">Já vimos o que funciona. Já vimos o que não funciona. E sabemos por quê.</span>
+        <span data-lang="en">We have seen what works. We have seen what does not. And we know why.</span>
+      </p>
+    </div>
+
+    <div class="cred-marks">
+      <div class="cred-mark">
+        <strong>
+          <span data-lang="pt">Reconhecimento</span>
+          <span data-lang="en">Recognition</span>
+        </strong>
+        Forbes 5-Star
+      </div>
+      <div class="cred-mark">
+        <strong>
+          <span data-lang="pt">Reconhecimento</span>
+          <span data-lang="en">Recognition</span>
+        </strong>
+        Michelin Keys
+      </div>
+      <div class="cred-mark">
+        <strong>
+          <span data-lang="pt">Hotelaria</span>
+          <span data-lang="en">Hotels</span>
+        </strong>
+        World's 50 Best
+      </div>
+      <div class="cred-mark">
+        <strong>F&amp;B</strong>
+        Michelin Stars
+      </div>
+      <div class="cred-mark">
+        <strong>Real Estate</strong>
+        Mixed-use · Integrated Resorts
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach">
+  <div class="container">
+    <div class="approach-grid">
+      <div class="approach-text">
+        <div class="eyebrow">
+          <span data-lang="pt">Como pensamos</span>
+          <span data-lang="en">How we think</span>
+        </div>
+        <h2>
+          <span data-lang="pt">Bom gosto ajuda. <em>Sistemas que funcionam</em> importam mais.</span>
+          <span data-lang="en">Good taste helps. <em>Systems that work</em> matter more.</span>
+        </h2>
+        <p>
+          <span data-lang="pt"><strong>Bespoke não é exercício de estilo.</strong> É a disciplina de criar a resposta certa para um lugar, um mercado e uma lógica de investimento específicos.</span>
+          <span data-lang="en"><strong>Bespoke is not a styling exercise.</strong> It is the discipline of building the right answer for a specific place, market, and investment logic.</span>
+        </p>
+        <p>
+          <span data-lang="pt"><strong>Natureza não é decoração.</strong> É input estratégico de design. Define orientação, privacidade, ritmo, chegada, ritual, identidade.</span>
+          <span data-lang="en"><strong>Nature is not decoration.</strong> It is a strategic design input. It defines orientation, privacy, pacing, arrival, ritual, identity.</span>
+        </p>
+        <p>
+          <span data-lang="pt"><strong>Hospitalidade não é camada final.</strong> É o que dá tração emocional, poder de precificação e relevância de longo prazo a um ativo.</span>
+          <span data-lang="en"><strong>Hospitality is not a final layer.</strong> It is what gives an asset emotional pull, pricing power, and long-term relevance.</span>
+        </p>
+        <p>
+          <span data-lang="pt">Trabalhamos com quem enxerga ao mesmo tempo o sonho e a planilha.</span>
+          <span data-lang="en">We work with people who see the dream and the spreadsheet at the same time.</span>
+        </p>
+      </div>
+      <div class="approach-visual">
+        <span class="vlabel">Bespoke</span>
+        <span class="vmain">
+          <span data-lang="pt">Conceito.<br>Operação.<br>Valor.</span>
+          <span data-lang="en">Concept.<br>Operation.<br>Value.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-head">
+    <div>
+      <div class="eyebrow">
+        <span data-lang="pt">Trabalho</span>
+        <span data-lang="en">Work</span>
+      </div>
+      <h2>
+        <span data-lang="pt">Conceitos que <em>pertencem ao lugar</em>.</span>
+        <span data-lang="en">Concepts that <em>belong to the place</em>.</span>
+      </h2>
+    </div>
+    <p>
+      <span data-lang="pt">Recortes de projetos, conceitos e referências que moldam nossa leitura. Cada decisão pertence ao terreno, ao mercado e à lógica de investimento.</span>
+      <span data-lang="en">Glimpses of projects, concepts, and references that shape our reading. Each decision belongs to the site, the market, and the investment logic.</span>
+    </p>
+  </div>
+
+  <div class="gallery-grid">
+    <figure>
+      <img src="imagens/cliff-pool.jpg" alt="Piscina de borda infinita em encosta" loading="lazy">
+      <figcaption>
+        <small data-lang="pt">Boutique, encosta</small>
+        <small data-lang="en">Boutique, cliffside</small>
+        <span data-lang="pt">Sítio define produto.</span>
+        <span data-lang="en">Site defines product.</span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="imagens/wellness.png" alt="Resort integrado em montanhas" loading="lazy">
+      <figcaption>
+        <small data-lang="pt">Wellness, resort integrado</small>
+        <small data-lang="en">Wellness, integrated resort</small>
+        <span data-lang="pt">Hospitalidade que pertence à topografia.</span>
+        <span data-lang="en">Hospitality that belongs to the topography.</span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="imagens/treehouse.jpg" alt="Casa na árvore com cachoeira" loading="lazy">
+      <figcaption>
+        <small data-lang="pt">F&amp;B, destino</small>
+        <small data-lang="en">F&amp;B, destination</small>
+        <span data-lang="pt">Programação cria razão para vir.</span>
+        <span data-lang="en">Programming creates a reason to come.</span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="imagens/jungle-train.png" alt="Restaurante em vagão de trem antigo na mata" loading="lazy">
+      <figcaption>
+        <small data-lang="pt">F&amp;B, conceito</small>
+        <small data-lang="en">F&amp;B, concept</small>
+        <span data-lang="pt">Conceito não é decoração. É operação.</span>
+        <span data-lang="en">Concept is not decoration. It is operation.</span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="imagens/overwater.jpg" alt="Bangalôs sobre a água em baía tropical" loading="lazy">
+      <figcaption>
+        <small data-lang="pt">Resort, mixed-use</small>
+        <small data-lang="en">Resort, mixed-use</small>
+        <span data-lang="pt">Master plan, operação e venda no mesmo desenho.</span>
+        <span data-lang="en">Master plan, operations, and sales in one design.</span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="imagens/lakeside.jpg" alt="Cabanas modulares à beira de lago" loading="lazy">
+      <figcaption>
+        <small data-lang="pt">Real Estate, beira-lago</small>
+        <small data-lang="en">Real Estate, lakeside</small>
+        <span data-lang="pt">Lotes vendem quando o lugar tem motivo.</span>
+        <span data-lang="en">Lots sell when the place has a reason.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-intro">
+      <div class="eyebrow">
+        <span data-lang="pt">Vamos conversar</span>
+        <span data-lang="en">Let's talk</span>
+      </div>
+      <h2>
+        <span data-lang="pt">Se você tem <em>terra, ativo ou projeto</em> que merece um sistema por trás.</span>
+        <span data-lang="en">If you have <em>land, an asset, or a project</em> that deserves a real system behind it.</span>
+      </h2>
+      <p>
+        <span data-lang="pt">Respondemos a investidores, proprietários de terra e incorporadores. Conversas iniciais são confidenciais e diretas.</span>
+        <span data-lang="en">We respond to investors, landowners, and developers. Initial conversations are confidential and direct.</span>
+      </p>
+
+      <div class="contact-direct">
+        <div class="contact-direct-item">
+          <span class="label">Email</span>
+          <a href="mailto:contato@epicobrasil.com">contato@epicobrasil.com</a>
+        </div>
+        <div class="contact-direct-item">
+          <span class="label">WhatsApp</span>
+          <a href="https://wa.me/5511961953747" target="_blank" rel="noopener">+55 11 96195-3747</a>
+        </div>
+        <div class="contact-direct-item">
+          <span class="label">
+            <span data-lang="pt">Base</span>
+            <span data-lang="en">Based</span>
+          </span>
+          <span>São Paulo · Brasil</span>
+        </div>
+      </div>
+    </div>
+
+    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <div>
+          <label for="name">
+            <span data-lang="pt">Nome</span>
+            <span data-lang="en">Name</span>
+          </label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="company">
+            <span data-lang="pt">Empresa</span>
+            <span data-lang="en">Company</span>
+          </label>
+          <input type="text" id="company" name="company">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="phone">
+            <span data-lang="pt">Telefone</span>
+            <span data-lang="en">Phone</span>
+          </label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+      </div>
+
+      <div>
+        <label for="type">
+          <span data-lang="pt">Sobre o que é</span>
+          <span data-lang="en">About</span>
+        </label>
+        <select id="type" name="type" required>
+          <option value="" data-pt="Selecione" data-en="Select">Selecione</option>
+          <option value="land" data-pt="Terra com potencial" data-en="Land with potential">Terra com potencial</option>
+          <option value="asset" data-pt="Ativo existente" data-en="Existing asset">Ativo existente</option>
+          <option value="masterplan" data-pt="Master plan / novo projeto" data-en="Master plan / new project">Master plan / novo projeto</option>
+          <option value="repositioning" data-pt="Reposicionamento / turnaround" data-en="Repositioning / turnaround">Reposicionamento / turnaround</option>
+          <option value="fund" data-pt="Fundo de investimento" data-en="Investment fund">Fundo de investimento</option>
+          <option value="other" data-pt="Outro" data-en="Other">Outro</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message">
+          <span data-lang="pt">Mensagem</span>
+          <span data-lang="en">Message</span>
+        </label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+
+      <button type="submit">
+        <span data-lang="pt">Enviar</span>
+        <span data-lang="en">Send</span>
+      </button>
+
+      <div class="form-message" id="form-message">
+        <span data-lang="pt">Recebemos. Retornaremos em breve.</span>
+        <span data-lang="en">Received. We will be in touch shortly.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">EPICO<span style="color:var(--clay)"> .</span> BRASIL</div>
+  <div>
+    <span data-lang="pt">© 2026 EPICO Brasil. Hospitalidade. Estratégia. Criação de valor.</span>
+    <span data-lang="en">© 2026 EPICO Brasil. Hospitality. Strategy. Value creation.</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5511961953747" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.getElementById('btn-pt').classList.toggle('active', lang === 'pt-BR');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    const opts = document.querySelectorAll('#type option');
+    opts.forEach(o => {
+      const key = lang === 'pt-BR' ? 'pt' : 'en';
+      const v = o.getAttribute('data-' + key);
+      if(v) o.textContent = v;
+    });
+    document.title = lang === 'en'
+      ? 'EPICO Brasil. Hospitality as value creation.'
+      : 'EPICO Brasil. Hospitalidade como criação de valor.';
+    try{ localStorage.setItem('epico-lang', lang); }catch(e){}
+  }
+  try{
+    const saved = localStorage.getItem('epico-lang');
+    if(saved){ setLang(saved); }
+  }catch(e){}
+  document.getElementById('contact-form').addEventListener('submit', async function(e){
+    const form = e.target;
+    if(form.action.includes('YOUR_FORM_ID')){
+      e.preventDefault();
+      document.getElementById('form-message').classList.add('show');
+      form.reset();
+      return;
+    }
+    e.preventDefault();
+    try{
+      const res = await fetch(form.action, {
+        method:'POST',
+        body:new FormData(form),
+        headers:{'Accept':'application/json'}
+      });
+      if(res.ok){
+        document.getElementById('form-message').classList.add('show');
+        form.reset();
+      } else {
+        alert('Erro ao enviar. Tente o email ou WhatsApp.');
+      }
+    }catch(err){
+      alert('Erro ao enviar. Tente o email ou WhatsApp.');
+    }
+  });
+</script>
+
+</body>
+</html>
